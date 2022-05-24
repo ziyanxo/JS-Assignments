@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+h2 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 200px;
+  font-family: montserrat;
+}
+
+#countdown {
+  font-family: montserrat;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+</style>
+</head>
+<body>
+<h2>CountDown Timer.</h2>
+<div id="countdown"></div>
+
+<script>
+
+var timeleft = prompt("Enter Time In Seconds");
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Finished";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft + " seconds remaining...";
+  }
+  timeleft -= 1;
+}, 1000);
+
+</script>
+
+</body>
+</html>
